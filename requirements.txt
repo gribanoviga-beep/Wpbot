@@ -1,2 +1,11 @@
 
 flask
+python-telegram-bot
+requests
+httpx
+aiohttp
+pillow
+python-dotenv
+apscheduler
+
+
