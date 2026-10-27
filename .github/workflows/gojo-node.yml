@@ -1,0 +1,30 @@
+
+name: GOJO NODE BOT
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: |
+          npm init -y
+          npm install @andresaya/edge-tts twemoji-parser
+
+      - name: Run v11wp+.mjs
+        run: node "v11wp+.mjs"
